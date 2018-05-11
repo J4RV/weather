@@ -16,6 +16,13 @@ const avg = (nums) => ( nums.reduce((a, b) => a + b) / nums.length )
 const max = (nums) => ( nums.reduce((a, b) => a > b ? a : b ))
 const min = (nums) => ( nums.reduce((a, b) => a < b ? a : b ))
 
+const Temperature = ({label, kelvins}) => (
+  <div className='weather-day-temperature'>
+    <span className='smaller'>{label} </span>
+    {kelvinToCelsius(kelvins)}º
+  </div>
+)
+
 export default ({weatherDays}) => {
   const weather = WEATHERS[
     max(weatherDays.map(wday => WEATHERS.indexOf(wday.weather[0].main)))
@@ -29,11 +36,11 @@ export default ({weatherDays}) => {
   return (
     <div className={'weather-day weather-' + lowercaseWeather}>
       <div className='weather-day-icon'>{WEATHER_EMOJIS[weather]}</div>
-      <div className='weather-day-header'>{day}: {weather}</div>
+      <div className='weather-day-header'>{day}</div>
       <div>
-        <div className='weather-day-temperature'>~{kelvinToCelsius(avgTemperature)}º</div>
-        <div className='weather-day-temperature'>↑{kelvinToCelsius(maxTemperature)}º</div>
-        <div className='weather-day-temperature'>↓{kelvinToCelsius(minTemperature)}º</div>
+        <Temperature label='avg' kelvins={avgTemperature} />
+        <Temperature label='max' kelvins={maxTemperature} />
+        <Temperature label='min' kelvins={minTemperature} />
       </div>
     </div>
   )

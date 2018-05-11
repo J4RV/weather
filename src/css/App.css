@@ -6,16 +6,18 @@
 
 .header{
   background: #262626;
+  box-shadow:  0px 6px 8px #26262620, 0px 0px 16px #26262620;
+  position: relative;
+  z-index: 2;
 }
 
 .footer{
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
+  text-align: right;
+  margin-right: 16px;
 }
 
 .header-item{
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #f5f5f5;
   padding-left: 8px;
   padding-right: 8px;
@@ -32,6 +34,7 @@
 }
 
 .weather-list{
+  margin: 8px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -40,9 +43,9 @@
 .weather-day{
   padding: 8px;
   margin: 8px;
-  min-width: 272px;
+  min-width: 320px;
   border-radius: 3px;
-  box-shadow:  0px 4px 6px #26262620, 0px 0px 12px #26262620;
+  box-shadow:  0px 4px 6px #26262620, 0px 0px 12px #26262620, 0 3px 3px #26262620;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,14 +63,16 @@
   text-align: center;
   font-weight: 700;
   background: #ffffffaa;
-  padding: 4px 8px;
+  padding: 4px 12px;
   border-radius: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .weather-day-temperature{
-  padding: 8px;
+  margin: 8px;
   float: left;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .weather-day-weather{
@@ -95,6 +100,7 @@
     position: fixed;
     right: 16px;
     bottom: 16px;
+    z-index: 1;
   }
 
   .header-item{
@@ -104,22 +110,23 @@
   }
 
   .weather-day{
-    min-width: 216px;
+    min-width: 240px;
   }
 
   .weather-day-icon{
-    left: 4px;
     font-size: 1.2rem;
   }
 
   .weather-day-temperature{
-    padding: 4px;
+    margin: 4px;
     font-size: 1.2rem;
   }
 
   .footer{
     text-align: left;
     height: 88px;
-    line-height: 88px;
+    margin-top: 8px;
+    margin-left: 16px;
+    font-size: 0.6rem;
   }
 }

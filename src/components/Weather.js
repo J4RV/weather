@@ -50,7 +50,7 @@ const renderDaysOnly = (weather) => {
 
 const Weather = ({weather}) => {
   if (weather == null) return null
-  if (weather.cod !== '200') return <h2>{weather.message}</h2>
+  if (weather.cod !== '200') return null
   return renderDaysOnly(weather)
 }
 
