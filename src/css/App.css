@@ -1,8 +1,3 @@
-.app {
-  padding: 8px;
-  text-align: center;
-}
-
 .container{
   padding: 8px;
   display: flex;
@@ -14,8 +9,9 @@
 }
 
 .footer{
-  text-align: right;
-  margin: 0 16px 0 16px;
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
 }
 
 .header-item{
@@ -44,23 +40,34 @@
 .weather-day{
   padding: 8px;
   margin: 8px;
-  min-width: 176px;
+  min-width: 272px;
   border-radius: 3px;
-  box-shadow:  0px 4px 6px #26262620, 0px 0px 12px #26262620
+  box-shadow:  0px 4px 6px #26262620, 0px 0px 12px #26262620;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: #262626;
+}
+
+.weather-day-icon{
+  position: absolute;
+  left: 8px;
+  font-size: 1.4rem;
 }
 
 .weather-day-header{
   text-align: center;
   font-weight: 700;
   background: #ffffffaa;
-  padding: 0 4px;
+  padding: 4px 8px;
   border-radius: 3px;
 }
 
 .weather-day-temperature{
-  padding: 4px;
+  padding: 8px;
   float: left;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .weather-day-weather{
@@ -89,6 +96,27 @@
     right: 16px;
     bottom: 16px;
   }
+
+  .header-item{
+    font-size: 1rem;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .weather-day{
+    min-width: 216px;
+  }
+
+  .weather-day-icon{
+    left: 4px;
+    font-size: 1.2rem;
+  }
+
+  .weather-day-temperature{
+    padding: 4px;
+    font-size: 1.2rem;
+  }
+
   .footer{
     text-align: left;
     height: 88px;
