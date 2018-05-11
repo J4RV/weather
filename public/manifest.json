@@ -1,6 +1,6 @@
 {
-  "short_name": "ReactRedux",
-  "name": "React Redux App",
+  "short_name": "Weather",
+  "name": "Simple Weather App",
   "icons": [
     {
       "src": "favicon.ico",

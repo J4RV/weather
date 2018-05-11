@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Weather from './Weather'
 import Header from './Header'
+import Footer from './Footer'
 import searchCity from '../actions/searchCity'
 import '../css/App.css'
 
@@ -18,6 +19,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Weather />
+        <Footer />
       </React.Fragment>
     )
   }
