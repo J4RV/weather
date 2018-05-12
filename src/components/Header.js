@@ -1,5 +1,6 @@
 import React from 'react'
 import Inputs from './Inputs'
+import Flag from 'react-world-flags'
 import {connect} from 'react-redux'
 
 function kelvinToCelsius (kelvinDegrees) {
@@ -22,6 +23,7 @@ const Header = ({weather}) => {
 
   return (
     <div className='container header'>
+      <Flag code={weather.city.country} height="24" />
       <span className='header-item'>{city}</span>
       <span className='header-item'>
         {kelvinToCelsius(currentTemperatureInKelvin)}ºC
