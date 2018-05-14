@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import TimeWeather from './TimeWeather'
-import DayWeather from './DayWeather';
+import DayWeather from './DayWeather'
 
 const weatherListToDays = (weatherList) => {
   return weatherList.reduce((wDays, weatherData) => {

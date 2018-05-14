@@ -15,7 +15,7 @@ const EmptyHeader = ({error}) => (
 
 const Header = ({weather}) => {
   if (weather == null) return <EmptyHeader />
-  if (weather.cod !== '200') return <EmptyHeader error={weather.message}/>
+  if (weather.cod !== '200') return <EmptyHeader error={weather.message} />
   const city = `${weather.city.name} (${weather.city.country})`
   const currentTemperatureInKelvin = weather.list[0].main.temp
   const currentWeather = weather.list[0].weather[0].main
