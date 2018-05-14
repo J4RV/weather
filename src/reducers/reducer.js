@@ -1,4 +1,4 @@
-import {SET_CITY, SET_WEATHER} from '../actions/searchCity'
+import {SET_CITY, SET_WEATHER} from '../actions/actionKeys'
 
 const initState = {
   city: 'Seville',
@@ -12,7 +12,7 @@ export default (state = initState, action) => {
     case SET_WEATHER:
       const weather = action.weather
       console.log('Setting weather', weather)
-      const currentWeather = 
+      const currentWeather =
         weather.cod === '200'
           ? weather.list[0].weather[0].main.toLowerCase()
           : undefined
