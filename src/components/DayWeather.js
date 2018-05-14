@@ -9,12 +9,12 @@ const WEATHER_EMOJIS = {
   'Clear': '☀️',
   'Clouds': '☁️',
   'Rain': '☔',
-  'Snow': '❄️',
+  'Snow': '❄️'
 }
 
-const avg = (nums) => ( nums.reduce((a, b) => a + b) / nums.length )
-const max = (nums) => ( nums.reduce((a, b) => a > b ? a : b ))
-const min = (nums) => ( nums.reduce((a, b) => a < b ? a : b ))
+const avg = (nums) => (nums.reduce((a, b) => a + b) / nums.length)
+const max = (nums) => (nums.reduce((a, b) => a > b ? a : b))
+const min = (nums) => (nums.reduce((a, b) => a < b ? a : b))
 
 const Temperature = ({label, kelvins}) => (
   <div className='weather-day-temperature'>
@@ -23,10 +23,9 @@ const Temperature = ({label, kelvins}) => (
   </div>
 )
 
-export default ({weatherDays}) => {
-  const weather = WEATHERS[
-    max(weatherDays.map(wday => WEATHERS.indexOf(wday.weather[0].main)))
-  ]
+const DayWeather = ({weatherDays}) => {
+  const weatherIndex = max(weatherDays.map(wday => WEATHERS.indexOf(wday.weather[0].main)))
+  const weather = WEATHERS[weatherIndex]
   const lowercaseWeather = weather.toLowerCase()
   const datejs = Date.parse(weatherDays[0].dt_txt)
   const day = datejs.toString('dddd')
@@ -45,3 +44,5 @@ export default ({weatherDays}) => {
     </div>
   )
 }
+
+export default DayWeather
