@@ -51,6 +51,8 @@
   align-items: center;
   position: relative;
   color: #262626;
+  transition: all 0.3s cubic-bezier(.23,.01,.44,1.18);
+  animation: fadein 0.5s cubic-bezier(.23,.01,.44,1.18);;
 }
 
 .weather-day-icon{
@@ -129,4 +131,9 @@
     margin-left: 16px;
     font-size: 0.6rem;
   }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
