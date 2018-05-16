@@ -12,10 +12,16 @@ import '../css/App.css'
 class App extends React.Component {
   componentDidMount () {
     const {city, searchCity, weatherFromGeolocalization} = this.props
+    const onNoGeo = () => searchCity(city)
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(weatherFromGeolocalization)
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 3000
+      }
+      navigator.geolocation.getCurrentPosition(
+        weatherFromGeolocalization, onNoGeo, options)
     } else {
-      searchCity(city)
+      onNoGeo()
     }
   }
 
